@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td class = "align-middle">
+                <img src="https://podketo.pl/583-large_default/maka-kokosowa-1000g-podketopl.jpg" class="rounded mx-auto d-bloc" height="50">
+            </td>
+            <td class = "align-middle">{{product.name}}</td>
+            <td class = "align-middle">{{product.price | currency:"PLN":"symbol"}}</td>
+        </tr>
+    </tbody>
+</table>
+

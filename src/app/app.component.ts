@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Product } from './product';
-import { ProductService } from './product.service';
+import { Product } from './models/product';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -10,31 +10,8 @@ import { ProductService } from './product.service';
 })
 export class AppComponent implements OnInit {
 
-  public products: Product[] = [];
-
-  constructor(private productService: ProductService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.getProducts();
-  }
-
-  public getProducts() : void {
-    this.productService.getProduct().subscribe(
-      (response: Product[]) => {
-        this.products = response;
-      },
-      (error : HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  }
-
-  
-
-
-
-
-
-
-  
+  }  
 }
